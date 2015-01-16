@@ -12,11 +12,11 @@ E copie o pre-push.sample como pre-push na pasta .git/hooks
 
 ex: PROJ-HOME -> /Users/alexandre/projetos/ios-project
 
-'''
+```
 $ cd  /Users/alexandre/projetos/ios-project
 $ git clone git@github.com:garrefa/ci-scripts.git scripts
 $ cp scripts/pre-push.sample .git/hooks/pre-push
-'''
+```
 
 ## validate-pbx.py
 
