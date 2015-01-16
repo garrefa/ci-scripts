@@ -13,7 +13,7 @@ python3 "$WORKING_DIR/validate-pbx.py"
 
 if [ $? -gt 0 ]
 then  
-    read -p "Cara, esse seu push vai foder a porra toda. Confirma? [s|n] " -n 1 -r < /dev/tty
+    read -p "Faltam resources em alguns targets. Confirmar o push? [s|n] " -n 1 -r < /dev/tty
     echo
     if echo $REPLY | grep -E '^[Ss]$' > /dev/null
     then
