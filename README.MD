@@ -3,6 +3,7 @@
 Coleção de scripts úteis para integração contínua em projetos que utilizem Xcode.
 
 * Requer python 3
+* Hooks requerem git v2
 
 ## Como Utilizar
 
