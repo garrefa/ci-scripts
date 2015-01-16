@@ -1,0 +1,22 @@
+#!/bin/sh
+
+############################################################################
+# Script de hook para validações de pré git push                           #
+############################################################################
+# INSTRUÇOES:                                                              #
+#                                                                          #
+# Copie este script para a pasta .git/hooks do projeto                     #
+# Esta é uma configuração local e terá que ser feita em cada máquina       #
+# onde se deseja utilizar este script.                                     #
+# É importante manter o nome (pre-push).                                   #
+#                                                                          #
+############################################################################
+# Desenvolvido por : Alexandre Garrefa                                     #
+# alexandre.garrefa@concretesolutions.com.br                               #
+# Criado em  : 14/01/2015                                                  #
+############################################################################
+
+WORKING_DIR="$(dirname $0)"
+cd $WORKING_DIR
+
+bash "../../scripts/git-push-hook.sh"
