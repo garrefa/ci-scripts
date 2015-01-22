@@ -13,7 +13,8 @@
 ############################################################################
 # Desenvolvido por : Alexandre Garrefa                                     #
 # alexandre.garrefa@concretesolutions.com.br                               #
-# Criado em  : 14/01/2015                                                  #
+# Criado em   : 14/01/2015                                                 #
+# Alterado em : 22/01/2015                                                 #
 ############################################################################
 
 WORKING_DIR="$(dirname $0)"
@@ -22,14 +23,19 @@ cd $WORKING_DIR
 python3 "../../scripts/validate-pbx.py"
 
 if [ $? -gt 0 ]
-then  
-    read -p "Faltam resources em alguns targets. Confirmar o push? [s|n] " -n 1 -r < /dev/tty
-    echo
-    if echo $REPLY | grep -E '^[Ss]$' > /dev/null
+then
+    if [ -z $DISPLAY ]
     then
-        exit 0 # push will execute
+       read -p "Faltam resources em alguns targets. Confirmar o push? [s|n] " -n 1 -r < /dev/tty
+       echo
+       if echo $REPLY | grep -E '^[Ss]$' > /dev/null
+       then
+           exit 0 # push will execute
+       fi
+       exit 1 # push will not execute
+    else
+	exit 1 # push will not execute
     fi
-    exit 1 # push will not execute
 else  
     exit 0 # push will execute
 fi  
